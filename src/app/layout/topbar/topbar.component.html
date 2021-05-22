@@ -1,0 +1,506 @@
+<div class="dashboard-right-header-wrapper">
+	<div class="dashboard-right-header-nav-container">
+		<div class="section-heading-container dashboard-header-padding">
+			<a href="javascript:void(0);" (click)="toggle()">
+				<img class="search-icon-img" src="./assets/img/hamburgur.svg" alt=""
+			/></a>
+			<p class="section-heading ml-3">{{ pageName }}</p>
+		</div>
+		<div class="dashboard-header-right-container">
+			<a
+				class="add-ticket-link"
+				href="javascript:void(0)"
+				routerLink="/tickets/ticket-view"
+			>
+				<img src="./assets/img/plus (1).svg" alt="" /> Add Ticket
+			</a>
+			<div class="search-bar-container">
+				<input class="header-search-input" type="text" placeholder="Search" />
+				<a class="search-icon-link" href="javascript:void(0);">
+					<img
+						class="search-icon-img"
+						src="./assets/img/search (5).svg"
+						alt=""
+					/>
+				</a>
+			</div>
+			<a class="header-nav-links" href="javascript:void(0);">
+				<img src="./assets/img/favorites.svg" alt="" />
+			</a>
+			<a class="header-nav-links" href="javascript:void(0);">
+				<img src="./assets/img/send (1).svg" alt="" />
+			</a>
+			<a
+				class="header-nav-links"
+				href="javascript:void(0);"
+				routerLink="/chat/chat-view"
+			>
+				<img
+					class="search-icon-img"
+					src="./assets/img/envelope-green.svg"
+					alt=""
+			/></a>
+			<a
+				class="header-nav-links"
+				href="javascript:void(0);"
+				(click)="showDailer = !showDailer"
+			>
+				<img class="search-icon-img" src="./assets/img/call.svg" alt=""
+			/></a>
+			<a href="javascript:void(0);" style="margin-right: 5px">
+				<img src="./assets/img/notification (1).svg" alt="" />
+			</a>
+			<div ngbDropdown class="d-inline-block">
+				<a class="header-profile-img-container" ngbDropdownToggle
+					><img src="./assets/img/dummy-profile.png" alt=""
+				/></a>
+				<div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+					<a href="javascript:void(0);" class="dropdown-item notify-item">
+						<span><i class="fa fa-envelope"></i> {{ loginmailid }}</span>
+					</a>
+					<a
+						href="javascript:void(0);"
+						class="dropdown-item notify-item"
+						(click)="logout()"
+					>
+						<i class="fe-log-out"></i>
+						<span
+							><i class="fa fa-sign-out" style="width: 1.4rem"></i>Logout</span
+						>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--.............Dailer....................  -->
+	<div class="dialer-wrapper" *ngIf="showDailer">
+		<button
+			type="button"
+			class="btn btn-danger"
+			style="display: none"
+			(click)="complete()"
+		>
+			Complete
+		</button>
+		<div class="dialer-header">
+			<div class="dropdown dialer-dropdown">
+				<button type="button" class="btn dialer-btn" data-toggle="dropdown">
+					<div style="display: flex; align-items: center">
+						<div class="status-circle {{ currentStatus }}"></div>
+						<p class="dialer-text">
+							{{ currentStatus === 'Idle' ? 'Online' : currentStatus }}
+						</p>
+						<img
+							src="../../../assets/img/dialer/arrow-down-green.svg"
+							class="right-icon"
+						/>
+					</div>
+				</button>
+				<div class="dropdown-menu dialer-dropdown-menu">
+					<ng-container *ngIf="activities.length > 0">
+						<ng-container *ngFor="let status of activities">
+							<a
+								class="dropdown-item dialer-dropdown-item"
+								*ngIf="status.friendlyName !== 'Reserved'"
+								(click)="toggleIsOnQueue(status.sid)"
+								href="javascript:void(0);"
+							>
+								<div class="status-circle {{ status.friendlyName }}"></div>
+								<p class="dialer-text">
+									{{
+										status.friendlyName === 'Idle'
+											? 'Online'
+											: status.friendlyName
+									}}
+								</p>
+								<img
+									src="../../../assets/img/dialer/tick-green.svg"
+									*ngIf="currentStatus === status.friendlyName"
+									class="right-icon"
+								/>
+							</a>
+						</ng-container>
+					</ng-container>
+					<!-- <a class="dropdown-item dialer-dropdown-item" href="javascript:void(0);">
+                        <div class="status-circle away"></div>
+                        <p class="dialer-text">Away</p>
+                        <img src="../../../assets/img/dialer/tick-green.svg" class="right-icon">
+                    </a>
+                    <a class="dropdown-item dialer-dropdown-item" href="javascript:void(0);">
+                        <div class="status-circle invisible-status"></div>
+                        <p class="dialer-text">Invisible</p>
+                        <img src="../../../assets/img/dialer/tick-green.svg" class="right-icon">
+                    </a> -->
+				</div>
+			</div>
+
+			<div class="dropdown dialer-dropdown-location">
+				<button
+					type="button"
+					class="btn location-dialer"
+					data-toggle="dropdown"
+				>
+					<div
+						style="display: flex; align-items: center; justify-content: center"
+					>
+						<img src="../../../assets/img/dialer/globe-green.svg" />
+						<!-- <img src="../../../assets/img/dialer/globe-white.svg"> -->
+					</div>
+				</button>
+				<div class="dropdown-menu location-dropdown-menu">
+					<a
+						class="dropdown-item dialer-dropdown-item"
+						href="javascript:void(0);"
+					>
+						<img
+							src="../../../assets/img/dialer/globe-green.svg"
+							class="status-circle glob"
+						/>
+						<p class="dialer-text">Via browser</p>
+						<img
+							src="../../../assets/img/dialer/tick-green.svg"
+							class="right-icon"
+						/>
+					</a>
+					<a
+						class="dropdown-item dialer-dropdown-item disable-item"
+						href="javascript:void(0);"
+					>
+						<img
+							src="../../../assets/img/dialer/phone-gray.svg"
+							class="status-circle glob"
+						/>
+						<p class="dialer-text disable-item">Via phone: Not configured</p>
+						<!-- <img src="../../../assets/img/dialer/tick-green.svg" class="right-icon"> -->
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<!--.......code for no- incoming call screen.........  -->
+
+		<div class="dialer-middle-screen" *ngIf="dailerScreen === 'nocall'">
+			<img src="../../../assets/img/dialer/no-incoming-call.svg" />
+			<p class="no-incoming">No incoming call</p>
+		</div>
+		<div class="dialer-middle-screen" *ngIf="dailerScreen === 'callcomming'">
+			<div class="custom-incomingcall-widget">
+				<div class="custom-user-img">
+					<img src="../../../assets/img/dialer/calling/user.jpg" alt="" />
+				</div>
+				<h4 class="custom-user-name m-t-10 m-b-0 text-ellipsis">
+					{{ reservation.task.attributes.from }}
+				</h4>
+				<h6 class="custom-user-phone m-t-10 m-b-0 text-ellipsis">
+					{{ reservation.task.attributes.from_country }}
+				</h6>
+				<div class="custom-small text-muted">calling ...</div>
+				<div class="custom-incoming-btns">
+					<button
+						type="button"
+						class="btn btn-success m-r-10"
+						(click)="accept(reservation)"
+					>
+						Answer
+					</button>
+					<button type="button" class="btn btn-danger" (click)="complete()">
+						Complete
+					</button>
+				</div>
+			</div>
+
+			<!--div style="display: flex;width: 100%;justify-content: space-evenly;">
+                <div>
+                    <button type="button" class="btn btn-success" (click)="accept(reservation)">Accept</button>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-danger" (click)="complete()">Complete</button>
+                </div>
+            </div> -->
+		</div>
+		<div class="dialer-middle-screen" *ngIf="dailerScreen === 'outgoing'">
+			<div class="custom-incomingcall-widget">
+				<div class="custom-user-img">
+					<img src="../../../assets/img/dialer/calling/user.jpg" alt="" />
+				</div>
+				<h4 class="custom-user-name m-t-10 m-b-0 text-ellipsis">
+					{{ phoneNumber }}
+				</h4>
+				<div class="custom-small text-muted">calling ...</div>
+				<div class="custom-incoming-btns">
+					<button
+						type="button"
+						class="btn btn-danger m-r-10"
+						(click)="hangUpOutgoingCall()"
+					>
+						HangUp
+					</button>
+				</div>
+			</div>
+
+			<!--div style="display: flex;width: 100%;justify-content: space-evenly;">
+                <div>
+                    <button type="button" class="btn btn-success" (click)="accept(reservation)">Accept</button>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-danger" (click)="complete()">Complete</button>
+                </div>
+            </div> -->
+		</div>
+		<!--.......code for no- incoming call screen.........  -->
+
+		<div class="dialer-keypad" *ngIf="dailerScreen === 'dailer'">
+			<div class="input-area">
+				<form class="form-inline dialer-form">
+					<div class="flag">
+						<input type="country" class="form-control dialer-form-flag" />
+						<img src="../../../assets/img/dialer/flag.svg" class="align" />
+						<!-- <img
+							src="../../../assets/img/dialer/arrow-down-green.svg"
+							class="align-arrow float-right"
+						/> -->
+						<input
+							type="text"
+							name="phoneNUmber"
+							[(ngModel)]="phoneNumber"
+							class="form-control dialer-form-control"
+							placeholder="Phone number, Name"
+						/>
+						<div>
+							<i class="fa fa-times" aria-hidden="true"></i>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="custom-keyboard">
+				<div class="row">
+					<div class="digit" id="one" (click)="addDigit('1')">1</div>
+					<div class="digit" id="two" (click)="addDigit('2')">
+						2
+						<div class="sub">ABC</div>
+					</div>
+					<div class="digit" id="three" (click)="addDigit('3')">
+						3
+						<div class="sub">DEF</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="digit" id="four" (click)="addDigit('4')">
+						4
+						<div class="sub">GHI</div>
+					</div>
+					<div class="digit" id="five" (click)="addDigit('5')">
+						5
+						<div class="sub">JKL</div>
+					</div>
+					<div class="digit" (click)="addDigit('6')">
+						6
+						<div class="sub">MNO</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="digit" (click)="addDigit('7')">
+						7
+						<div class="sub">PQRS</div>
+					</div>
+					<div class="digit" (click)="addDigit('8')">
+						8
+						<div class="sub">TUV</div>
+					</div>
+					<div class="digit" (click)="addDigit('9')">
+						9
+						<div class="sub">WXYZ</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="digit" (click)="addDigit('*')">*</div>
+					<div class="digit" (click)="addDigit('0')">0</div>
+					<div class="digit" (click)="addDigit('#')">#</div>
+				</div>
+			</div>
+			<div class="custom-dailer-callnow">
+				<div class="row">
+					<button id="call" class="dial-btn" (click)="callPhoneNumber()">
+						Call now
+					</button>
+				</div>
+			</div>
+		</div>
+
+		<!--.......code for keypaid screen.........  -->
+
+		<div class="dialer-keypad" *ngIf="dailerScreen === 'oncall'">
+			<div class="dialer-keypad">
+				<div class="custom-call-info">
+					<div class="row">
+						<p class="custom-usernumber-dialer">{{ task.attributes.from }}</p>
+						<p class="custom-call-timer">
+							<countup-timer [countUpTimerConfig]="testConfig"></countup-timer>
+						</p>
+					</div>
+				</div>
+				<div class="custom-keyboard">
+					<div class="row">
+						<div class="digit" id="one" (click)="addDigit('1')">1</div>
+						<div class="digit" id="two" (click)="addDigit('2')">
+							2
+							<div class="sub">ABC</div>
+						</div>
+						<div class="digit" id="three" (click)="addDigit('3')">
+							3
+							<div class="sub">DEF</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="digit" id="four" (click)="addDigit('4')">
+							4
+							<div class="sub">GHI</div>
+						</div>
+						<div class="digit" id="five" (click)="addDigit('5')">
+							5
+							<div class="sub">JKL</div>
+						</div>
+						<div class="digit" (click)="addDigit('6')">
+							6
+							<div class="sub">MNO</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="digit" (click)="addDigit('7')">
+							7
+							<div class="sub">PQRS</div>
+						</div>
+						<div class="digit" (click)="addDigit('8')">
+							8
+							<div class="sub">TUV</div>
+						</div>
+						<div class="digit" (click)="addDigit('9')">
+							9
+							<div class="sub">WXYZ</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="digit" (click)="addDigit('*')">*</div>
+						<div class="digit" (click)="addDigit('0')">0</div>
+						<div class="digit" (click)="addDigit('#')">#</div>
+					</div>
+				</div>
+				<div class="custom-dailer-other-option">
+					<div class="row">
+						<button
+							class="custom-pause"
+							[ngClass]="hold ? 'active' : ''"
+							(click)="toggleHold()"
+							type="button"
+						></button>
+						<button
+							class="custom-mute"
+							[ngClass]="mute ? 'active' : ''"
+							(click)="toggleMute()"
+							type="button"
+						></button>
+						<button
+							class="custom-transfer"
+							[ngClass]="!isCollapsed ? 'active' : ''"
+							(click)="isCollapsed = !isCollapsed"
+							type="button"
+							[attr.aria-expanded]="!isCollapsed"
+							aria-controls="custom-transfertcall-popup"
+						></button>
+
+						<div id="custom-transfertcall-popup" [ngbCollapse]="isCollapsed">
+							<div id="transfercalldetails">
+								<div class="transfer-call-screen">
+									<div class="custom-treansfercall-widget">
+										<div class="custom-treansfercall form-group">
+											<div
+												style="display: flex; justify-content: space-between"
+											>
+												<div>
+													<label for="custom-transfercall-label"
+														>Transfer Call List</label
+													>
+												</div>
+												<div>
+													<i
+														class="fa fa-times"
+														aria-hidden="true"
+														(click)="isCollapsed = !isCollapsed"
+													></i>
+												</div>
+											</div>
+											<select
+												class="form-control"
+												name="transfer"
+												[(ngModel)]="transfer.to"
+												(change)="toggleTransferPanel()"
+												id="custom-transfercall-numberlist"
+												placeholder="Select Queue"
+											>
+												<option value="null" selected disabled>
+													<p class="custom-tranfert-number">Select Queue</p>
+												</option>
+												<ng-container
+													*ngFor="let queue of taskQueue; let i = index"
+												>
+													<option [value]="queue.sid">
+														<p class="custom-tranfert-number">
+															{{ queue.friendlyName }}
+														</p>
+													</option>
+												</ng-container>
+											</select>
+										</div>
+										<div class="custom-transfercall-btns">
+											<button
+												class="dial-btn"
+												(click)="getConference()"
+												[disabled]="transfer.to === null"
+											>
+												Transfer Call
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="custom-dailer-callnow">
+					<div class="row">
+						<!--<button id="call" class="dial-btn" (click)="callPhoneNumber()"> Call now</button>-->
+						<button
+							type="button"
+							class="btn btn-danger custom-hangup-button"
+							(click)="hangUp()"
+						>
+							Hang Up
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--.......code for keypaid screen.........  -->
+
+		<div class="dialer-bottom">
+			<div class="call-down">
+				<img src="../../../assets/img/dialer/call-down.svg" />
+			</div>
+			<div class="dropdown" style="width: 70%">
+				<button type="button" class="btn bottom-number" data-toggle="dropdown">
+					{{ configuration.configuration.twilio.callerId }}
+					<img src="../../../assets/img/dialer/arrow-down-green.svg" />
+				</button>
+				<!-- <div class="dropdown-menu dialer-dropdown-menu">
+                    <a class="dropdown-item dialer-dropdown-item" href="javascript:void(0)">Link 1</a>
+                    <a class="dropdown-item dialer-dropdown-item" href="javascript:void(0)">Link 2</a>
+                    <a class="dropdown-item dialer-dropdown-item" href="javascript:void(0)">Link 3</a>
+                </div> -->
+			</div>
+			<div class="keypad-icon" (click)="dailerScreen = 'dailer'">
+				<img src="../../../assets/img/dialer/keypad-down.svg" />
+			</div>
+		</div>
+	</div>
+</div>

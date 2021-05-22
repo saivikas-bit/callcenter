@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="17.152" height="19.725" viewBox="0 0 17.152 19.725">
+  <g id="keypad" transform="translate(-32)">
+    <g id="Group_1518" data-name="Group 1518" transform="translate(32)">
+      <g id="Group_1517" data-name="Group 1517">
+        <path id="Path_26461" data-name="Path 26461" d="M35.859,0H33.286A1.288,1.288,0,0,0,32,1.286V3a1.288,1.288,0,0,0,1.286,1.286h2.573A1.288,1.288,0,0,0,37.146,3V1.286A1.288,1.288,0,0,0,35.859,0Z" transform="translate(-32)" fill="#bababa"/>
+      </g>
+    </g>
+    <g id="Group_1520" data-name="Group 1520" transform="translate(38.003)">
+      <g id="Group_1519" data-name="Group 1519">
+        <path id="Path_26462" data-name="Path 26462" d="M185.192,0h-2.573a1.288,1.288,0,0,0-1.286,1.286V3a1.288,1.288,0,0,0,1.286,1.286h2.573A1.288,1.288,0,0,0,186.479,3V1.286A1.288,1.288,0,0,0,185.192,0Z" transform="translate(-181.333)" fill="#bababa"/>
+      </g>
+    </g>
+    <g id="Group_1522" data-name="Group 1522" transform="translate(44.006)">
+      <g id="Group_1521" data-name="Group 1521">
+        <path id="Path_26463" data-name="Path 26463" d="M334.526,0h-2.573a1.288,1.288,0,0,0-1.286,1.286V3a1.288,1.288,0,0,0,1.286,1.286h2.573A1.288,1.288,0,0,0,335.813,3V1.286A1.288,1.288,0,0,0,334.526,0Z" transform="translate(-330.667)" fill="#bababa"/>
+      </g>
+    </g>
+    <g id="Group_1524" data-name="Group 1524" transform="translate(32 5.146)">
+      <g id="Group_1523" data-name="Group 1523">
+        <path id="Path_26464" data-name="Path 26464" d="M35.859,128H33.286A1.288,1.288,0,0,0,32,129.286V131a1.288,1.288,0,0,0,1.286,1.286h2.573A1.288,1.288,0,0,0,37.146,131v-1.715A1.288,1.288,0,0,0,35.859,128Z" transform="translate(-32 -128)" fill="#bababa"/>
+      </g>
+    </g>
+    <g id="Group_1526" data-name="Group 1526" transform="translate(38.003 5.146)">
+      <g id="Group_1525" data-name="Group 1525">
+        <path id="Path_26465" data-name="Path 26465" d="M185.192,128h-2.573a1.288,1.288,0,0,0-1.286,1.286V131a1.288,1.288,0,0,0,1.286,1.286h2.573A1.288,1.288,0,0,0,186.479,131v-1.715A1.288,1.288,0,0,0,185.192,128Z" transform="translate(-181.333 -128)" fill="#bababa"/>
+      </g>
+    </g>
+    <g id="Group_1528" data-name="Group 1528" transform="translate(44.006 5.146)">
+      <g id="Group_1527" data-name="Group 1527">
+        <path id="Path_26466" data-name="Path 26466" d="M334.526,128h-2.573a1.288,1.288,0,0,0-1.286,1.286V131a1.288,1.288,0,0,0,1.286,1.286h2.573A1.288,1.288,0,0,0,335.813,131v-1.715A1.288,1.288,0,0,0,334.526,128Z" transform="translate(-330.667 -128)" fill="#bababa"/>
+      </g>
+    </g>
+    <g id="Group_1530" data-name="Group 1530" transform="translate(32 10.291)">
+      <g id="Group_1529" data-name="Group 1529">
+        <path id="Path_26467" data-name="Path 26467" d="M35.859,256H33.286A1.288,1.288,0,0,0,32,257.286V259a1.288,1.288,0,0,0,1.286,1.286h2.573A1.288,1.288,0,0,0,37.146,259v-1.715A1.288,1.288,0,0,0,35.859,256Z" transform="translate(-32 -256)" fill="#bababa"/>
+      </g>
+    </g>
+    <g id="Group_1532" data-name="Group 1532" transform="translate(38.003 10.291)">
+      <g id="Group_1531" data-name="Group 1531">
+        <path id="Path_26468" data-name="Path 26468" d="M185.192,256h-2.573a1.288,1.288,0,0,0-1.286,1.286V259a1.288,1.288,0,0,0,1.286,1.286h2.573A1.288,1.288,0,0,0,186.479,259v-1.715A1.288,1.288,0,0,0,185.192,256Z" transform="translate(-181.333 -256)" fill="#bababa"/>
+      </g>
+    </g>
+    <g id="Group_1534" data-name="Group 1534" transform="translate(44.006 10.291)">
+      <g id="Group_1533" data-name="Group 1533">
+        <path id="Path_26469" data-name="Path 26469" d="M334.526,256h-2.573a1.288,1.288,0,0,0-1.286,1.286V259a1.288,1.288,0,0,0,1.286,1.286h2.573A1.288,1.288,0,0,0,335.813,259v-1.715A1.288,1.288,0,0,0,334.526,256Z" transform="translate(-330.667 -256)" fill="#bababa"/>
+      </g>
+    </g>
+    <g id="Group_1536" data-name="Group 1536" transform="translate(38.003 15.437)">
+      <g id="Group_1535" data-name="Group 1535">
+        <path id="Path_26470" data-name="Path 26470" d="M185.192,384h-2.573a1.288,1.288,0,0,0-1.286,1.286V387a1.288,1.288,0,0,0,1.286,1.286h2.573A1.288,1.288,0,0,0,186.479,387v-1.715A1.288,1.288,0,0,0,185.192,384Z" transform="translate(-181.333 -384)" fill="#bababa"/>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,103 @@
+/* .eco-main-wrapper {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+}
+
+.eco-side-left {
+    padding: 0;
+    background-color: #6C2BC2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.eco-side-right {
+    padding: 0;
+    background-color: #fff;
+    position: relative;
+}
+
+.eco-logo-circle {
+    height: 15rem;
+    width: 15rem;
+    border-radius: 50%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.eco-logo-icon {
+    width: 15rem;
+}
+
+.pri-color {
+    color: #6C2BC2;
+}
+
+.btn-unassign:hover {
+    background-color: #6C2BC2;
+    color: #fff;
+}
+
+.bt-sz {
+    min-width: 7rem;
+}
+
+.btn-unassign {
+    background-color: #b4b4b4;
+    color: #fff;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+} */
+.row {
+	margin: 0;
+	width: 100%;
+	text-align: left;
+	display: block;
+}
+.form-control:focus {
+	border: 1px solid black;
+	box-shadow: none;
+}
+footer {
+	background-color: black;
+	height: 8vh;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+}
+label {
+	font-size: 12px;
+}
+input {
+	font-size: 12px;
+}
+div {
+	font-size: 12px;
+}
+.btn {
+	font-size: 12px;
+	background-color: #005459;
+	box-shadow: none;
+	outline: none;
+	border: 0px;
+}
+.btn:focus {
+	box-shadow: none;
+	outline: none;
+}
+button {
+	font-size: 12px;
+	background-color: #005459;
+	box-shadow: none;
+	outline: none;
+	border: 0px;
+	border-radius: 0.25rem;
+}

@@ -1,0 +1,81 @@
+<div class="logo">
+	<a [routerLink]="['/dashboard/dashboard-view']">
+		<img src="./assets/logos/new-gradiantlogo.png" alt="" />
+	</a>
+</div>
+<div class="dashboard-tabs-wrapper">
+	<div class="dashboard-tab-container">
+		<a
+			class="dashboard-tab-item"
+			href="javascript:void(0);"
+			routerLink="/dashboard/dashboard-view"
+			[routerLinkActive]="['active']"
+		>
+			<img src="./assets/img/home-run.svg" alt="" title="Dashboard" />
+			<p>Dashboard</p>
+		</a>
+	</div>
+
+	<div class="dashboard-tab-container">
+		<a class="dashboard-tab-item" href="javascript:void(0);">
+			<img src="./assets/img/calendar-icon.svg" alt="" title="Calendar" />
+			<p>Calendar</p>
+		</a>
+	</div>
+
+	<div class="dashboard-tab-container">
+		<a class="dashboard-tab-item" href="javascript:void(0);" title="Contacts">
+			<img src="./assets/img/user (4).svg" alt="" />
+			<p>Contacts</p>
+		</a>
+	</div>
+
+	<div class="dashboard-tab-container">
+		<a class="dashboard-tab-item" href="javascript:void(0);">
+			<img src="./assets/img/analytics.svg" alt="" title="Analytics" />
+			<p>Analytics</p>
+		</a>
+	</div>
+
+	<div class="dashboard-tab-container">
+		<a class="dashboard-tab-item" href="javascript:void(0);">
+			<img src="./assets/img/settings.svg" alt="" title="Settings" />
+			<p>Settings</p>
+		</a>
+	</div>
+	<div class="dashboard-tab-container">
+		<a
+			class="dashboard-tab-item"
+			[routerLink]="['/agents']"
+			[routerLinkActive]="['active']"
+		>
+			<i class="fa fa-user" style="font-size: 1.5rem"></i>
+			<p>Agents</p>
+		</a>
+	</div>
+
+	<!-- <div class="dashboard-tab-container">
+        <a class="dashboard-tab-item" href="javascript:void(0);">
+            <img src="./assets/img/document (1).svg" alt="" title="Lorem">
+            <p>Lorem</p>
+        </a>
+    </div>
+    <div class="dashboard-tab-container">
+        <a class="dashboard-tab-item" href="javascript:void(0);">
+            <img src="./assets/img/internet (1).svg" alt="" title="Ipsum">
+            <p>Ipsum</p>
+        </a>
+    </div> -->
+	<!-- <div class="dashboard-tab-container">
+		<a class="dashboard-tab-item" href="javascript:void(0);">
+			<img src="./assets/img/wallet.svg" alt="" title="Dolar" />
+			<p>Dolar</p>
+		</a>
+	</div>
+	<div class="dashboard-tab-container">
+		<a class="dashboard-tab-item" href="javascript:void(0);">
+			<img src="./assets/img/calendar-new.svg" alt="" title="Quick" />
+			<p>Quick</p>
+		</a>
+	</div> -->
+</div>

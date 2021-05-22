@@ -1,0 +1,330 @@
+<div class="right-content-wrapper">
+	<div class="right-content-left-box">
+		<div class="box-header">
+			<p>Updates to your tickets</p>
+		</div>
+		<div class="updates-ticket-list-container">
+			<div class="update-ticket-list-item">
+				<div class="list-profile-img-container">
+					<img
+						class="list-profile-image"
+						src="./assets/img/dummy-profile.png"
+						alt=""
+					/>
+				</div>
+				<div class="update-list-item-content">
+					<p>
+						Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+						nonumy eirmod tempor invidunt ut labore et dolore
+					</p>
+				</div>
+			</div>
+
+			<div class="update-ticket-list-item">
+				<div class="list-profile-img-container">
+					<img
+						class="list-profile-image"
+						src="./assets/img/dummy-profile.png"
+						alt=""
+					/>
+				</div>
+				<div class="update-list-item-content">
+					<p>
+						Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+						nonumy eirmod tempor invidunt ut labore et dolore
+					</p>
+				</div>
+			</div>
+
+			<div class="update-ticket-list-item">
+				<div class="list-profile-img-container">
+					<img
+						class="list-profile-image"
+						src="./assets/img/dummy-profile.png"
+						alt=""
+					/>
+				</div>
+				<div class="update-list-item-content">
+					<p>
+						Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+						nonumy eirmod tempor invidunt ut labore et dolore
+					</p>
+				</div>
+			</div>
+
+			<div class="update-ticket-list-item">
+				<div class="list-profile-img-container">
+					<img
+						class="list-profile-image"
+						src="./assets/img/dummy-profile.png"
+						alt=""
+					/>
+				</div>
+				<div class="update-list-item-content">
+					<p>
+						Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+						nonumy eirmod tempor invidunt ut labore et dolore
+					</p>
+				</div>
+			</div>
+
+			<div class="update-ticket-list-item">
+				<div class="list-profile-img-container">
+					<img
+						class="list-profile-image"
+						src="./assets/img/dummy-profile.png"
+						alt=""
+					/>
+				</div>
+				<div class="update-list-item-content">
+					<p>
+						Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+						nonumy eirmod tempor invidunt ut labore et dolore
+					</p>
+				</div>
+			</div>
+
+			<div class="update-ticket-list-item">
+				<div class="list-profile-img-container">
+					<img
+						class="list-profile-image"
+						src="./assets/img/dummy-profile.png"
+						alt=""
+					/>
+				</div>
+				<div class="update-list-item-content">
+					<p>
+						Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+						nonumy eirmod tempor invidunt ut labore et dolore
+					</p>
+				</div>
+			</div>
+
+			<div class="update-ticket-list-item">
+				<div class="list-profile-img-container">
+					<img
+						class="list-profile-image"
+						src="./assets/img/dummy-profile.png"
+						alt=""
+					/>
+				</div>
+				<div class="update-list-item-content">
+					<p>
+						Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+						nonumy eirmod tempor invidunt ut labore et dolore
+					</p>
+				</div>
+			</div>
+
+			<div class="update-ticket-list-item">
+				<div class="list-profile-img-container">
+					<img
+						class="list-profile-image"
+						src="./assets/img/dummy-profile.png"
+						alt=""
+					/>
+				</div>
+				<div class="update-list-item-content">
+					<p>
+						Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+						nonumy eirmod tempor invidunt ut labore et dolore
+					</p>
+				</div>
+			</div>
+
+			<div class="update-ticket-list-item">
+				<div class="list-profile-img-container">
+					<img
+						class="list-profile-image"
+						src="./assets/img/dummy-profile.png"
+						alt=""
+					/>
+				</div>
+				<div class="update-list-item-content">
+					<p>
+						Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+						nonumy eirmod tempor invidunt ut labore et dolore
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="right-content-right-box">
+		<div class="right-content-right-box-top-container">
+			<div class="ticket-info-box-wrapper">
+				<div class="box-header">
+					<p>Open tickets</p>
+				</div>
+				<div class="box-content-wrapper">
+					<div class="center-align">
+						<p class="box-number-text">
+							<span
+								[CountTo]="tickSummary.openTicketsByUser"
+								[from]="0"
+								[duration]="1"
+							></span>
+						</p>
+						<p class="box-sub-text">You</p>
+					</div>
+					<div class="center-align">
+						<p class="box-number-text">
+							<span
+								[CountTo]="tickSummary.openTicketsByUserGrp"
+								[from]="0"
+								[duration]="1"
+							></span>
+						</p>
+						<p class="box-sub-text">Groups</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="ticket-info-box-wrapper">
+				<div class="box-header">
+					<p>Total tickets</p>
+				</div>
+				<div class="box-content-wrapper">
+					<div class="center-align">
+						<p class="box-number-text">
+							<span [CountTo]="23" [from]="0" [duration]="1"></span>
+						</p>
+						<p class="box-sub-text">Good</p>
+					</div>
+					<div class="center-align">
+						<p class="box-number-text">
+							<span [CountTo]="34" [from]="0" [duration]="1"></span>
+						</p>
+						<p class="box-sub-text">Bad</p>
+					</div>
+					<div class="center-align">
+						<p class="box-number-text">
+							<span [CountTo]="76" [from]="0" [duration]="1"></span>
+						</p>
+						<p class="box-sub-text">Solved</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="satisfaction-box">
+				<div class="box-header">
+					<p>Satisfaction</p>
+				</div>
+				<div class="box-content-wrapper">
+					<div>
+						<p class="satisfaction-box-number-text">
+							<span [CountTo]="93" [from]="0" [duration]="1"></span> %
+						</p>
+						<!-- <p class="box-sub-text">Good</p> -->
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="right-content-right-box-bottom-container">
+			<div class="bottom-content-box-header-container">
+				<div class="box-heading-container">
+					<p>Tickets requiring your attention (71)</p>
+					<!-- <button (click)="toggleIsOnQueue()">PhoneCall</button>
+                    <button (click)="accept(reservation)">answerCall</button>
+                    <button (click)="complete()">CompleteTask</button> -->
+
+					<a class="what-ths-link" href="javascript:void(0);">What's this?</a>
+				</div>
+
+				<div class="ticket-requested-list-container">
+					<div class="requsted-list-heading-container">
+						<!-- <div class="check-box-div">
+                            <input type="checkbox">
+                        </div> -->
+						<table>
+							<thead>
+								<tr>
+									<td style="width: 5%">req id</td>
+									<td style="width: 10%">summary</td>
+									<td style="width: 10%">assignedto</td>
+									<td style="width: 10%">group</td>
+									<td style="width: 10%">requestedBy</td>
+									<td style="width: 5%">createdDate</td>
+									<td style="width: 5%">updatedDate</td>
+								</tr>
+							</thead>
+							<tbody>
+								<tr *ngFor="let item of tickets; let id = index">
+									<td class="px-1">
+										<a [routerLink]="['/tickets/ticket-view', item['id']]">{{
+											item['RequestId']
+										}}</a>
+									</td>
+									<td class="text-capitalize">
+										{{
+											item['summary'].length > 25
+												? item['summary'].slice(0, 25) + '...'
+												: item['summary']
+										}}
+									</td>
+									<td class="text-capitalize">{{ item['Assignedto'] }}</td>
+									<td class="text-capitalize">{{ item['group'] }}</td>
+									<td class="text-capitalize" style="padding-left: 8px">
+										{{ item['ReportedBy'] }}
+									</td>
+									<td class="text-capitalize">
+										{{ item['CreatedDate'] | date: 'medium' }}
+									</td>
+									<td class="text-capitalize">
+										{{ item['UpdatedDate'] | date: 'medium' }}
+									</td>
+								</tr>
+							</tbody>
+						</table>
+
+						<!-- <div class="id-div">
+							<p class="list-heading-text">ID</p>
+						</div>
+						<div class="subject-div">
+							<p class="list-heading-text">SUBJECT</p>
+						</div>
+						<div class="requester-div">
+							<p class="list-heading-text">REQUESTER</p>
+						</div>
+						<div class="requester-updated-div">
+							<p class="list-heading-text">REQUESTER UPDATED</p>
+						</div>
+						<div class="group-div">
+							<p class="list-heading-text">GROUP</p>
+						</div>
+						<div class="assignee-div">
+							<p class="list-heading-text">ASSIGNEE</p>
+						</div> -->
+					</div>
+					<!-- <ng-container *ngIf="ticketsList.length > 0">
+                        <ng-container *ngFor="let ticket of ticketsList">
+                            <div class="requsted-list-item-container" routerLink="/tickets/ticket-view/{{ticket.id}}" style="cursor: pointer;">
+                                <div class="check-box-div">
+                                    <input type="checkbox">
+                                </div>
+                                <div class="id-div">
+                                    <p class="list-item-text">{{ticket.id}}</p>
+                                </div>
+                                <div class="subject-div">
+                                    <p class="list-item-text subject-text">{{ticket.issueDetails}}</p>
+                                </div>
+                                <div class="requester-div">
+                                    <p class="list-item-text">{{ticket.productReportedBy}}</p>
+                                </div>
+                                <div class="requester-updated-div">
+                                    <p class="list-item-text">Lorem ipsum</p>
+                                </div>
+                                <div class="group-div">
+                                    <p class="list-item-text">{{ticket.issueAssignedGroup}}</p>
+                                </div>
+                                <div class="assignee-div">
+                                    <p class="list-item-text">{{ticket.issueAssignedBy}}</p>
+                                </div>
+                            </div>
+                        </ng-container>
+                    </ng-container> -->
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

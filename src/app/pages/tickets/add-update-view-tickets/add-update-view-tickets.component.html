@@ -1,0 +1,572 @@
+<div class="right-content-wrapper pad-bot-0">
+	<div class="add-ticket-right-content-container">
+		<form style="display: contents" (ngSubmit)="submit(f.value)" #f="ngForm">
+			<div class="right-content-add-detail-wrapper">
+				<div class="card p-1 m-2">
+					<div>
+						<label for="reportedby" class="form-label">Reported By</label>
+						<input
+							type="text"
+							class="form-control"
+							name="reportedby"
+							[(ngModel)]="ReportedBy"
+							required
+						/>
+						<label for="Assigned to" class="form-label">Assigned To</label>
+						<ng-multiselect-dropdown
+							name="assignedto"
+							[data]="assignedto"
+							[(ngModel)]="selectedassigned"
+							[settings]="dropdownSettings"
+							(onSelect)="onuserselect($event)"
+							required
+						></ng-multiselect-dropdown>
+
+						<label for="assignement group" class="form-label"
+							>Assignment Group</label
+						>
+						<ng-multiselect-dropdown
+							name="assignmentgroup"
+							[data]="assignmentgroup"
+							[(ngModel)]="selectedgroup"
+							[settings]="dropdownSettings"
+							(onSelect)="ongroupselect($event)"
+							required
+						></ng-multiselect-dropdown>
+						<label for="Assigned to" class="form-label">status</label>
+						<ng-multiselect-dropdown
+							name="status"
+							[data]="status"
+							[(ngModel)]="statusselected"
+							[settings]="dropdownSettings"
+							required
+							closeDropDownOnSelection="true"
+						></ng-multiselect-dropdown>
+						<label for="priority" class="form-label">Prioroty</label>
+						<ng-multiselect-dropdown
+							name="priority"
+							[data]="priority"
+							[(ngModel)]="selectedpriority"
+							[settings]="dropdownSettings"
+							required
+						></ng-multiselect-dropdown>
+						<label for="urgency" class="form-label">Urgency</label>
+						<ng-multiselect-dropdown
+							name="urgency"
+							[data]="urgency"
+							[(ngModel)]="selectedurgency"
+							[settings]="dropdownSettings"
+							required
+						></ng-multiselect-dropdown>
+
+						<label for="creadteddate" class="form-label">Created Date</label>
+						<input
+							name="createddate"
+							type="text"
+							class="form-control"
+							[(ngModel)]="createdDate"
+							required
+							[disabled]="true"
+						/>
+						<label for="updateddate" class="form-label">Updated Date</label>
+						<input
+							name="updateddate"
+							type="text"
+							class="form-control"
+							[(ngModel)]="updatedDate"
+							required
+							[disabled]="true"
+						/>
+						<div class="form-group">
+							<label for="creadteddate" class="form-label">FollowUp Date</label>
+							<div class="input-group">
+								<input
+									class="form-control"
+									placeholder="yyyy-mm-dd"
+									name="followupdate"
+									[(ngModel)]="followupdate"
+									ngbDatepicker
+									#d1="ngbDatepicker"
+									style="border: 0px"
+									[placement]="'top-right'"
+								/>
+								<div class="input-group-append">
+									<button class="btn" (click)="d1.toggle()" type="button">
+										<i class="fa fa-calendar" aria-hidden="true"></i>
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- <div class="add-ticket-input-with-label">
+					<p class="add-ticket-input-label">User name</p>
+					<input
+						class="add-ticket-detail-input"
+						type="text"
+						placeholder="Enter the user name"
+						formControlName="name"
+					/>
+				</div>
+
+				<div class="add-ticket-input-with-label">
+					<p class="add-ticket-input-label">Assignee</p>
+					<input class="add-ticket-detail-input" type="text" hidden />
+			
+					<div class="add-ticket-detail-input">
+						<ng-autocomplete
+							[data]="employees"
+							[searchKeyword]="'firstName'"
+							placeHolder="Enter the employee name"
+							(selected)="selectEvent($event)"
+							(inputChanged)="onChangeSearch($event)"
+							(inputFocused)="onFocused($event)"
+							[itemTemplate]="itemTemplate"
+							[notFoundTemplate]="notFoundTemplate"
+							formControlName="assignee"
+						>
+						</ng-autocomplete>
+						<ng-template #itemTemplate let-item>
+							<a [innerHTML]="item.firstName"></a>
+						</ng-template>
+
+						<ng-template #notFoundTemplate let-notFound>
+							<div [innerHTML]="notFound"></div>
+						</ng-template>
+					</div>
+					<p class="add-ticket-input-label mar-top-15" style="display: none">
+						CC's
+					</p>
+					<input
+						class="add-ticket-detail-input"
+						type="text"
+						formControlName="ccs"
+						hidden
+					/>
+					<div class="add-ticket-detail-input" style="display: none">
+						<ng-autocomplete
+							[data]="employees"
+							[searchKeyword]="'firstName'"
+							placeHolder="Enter the employee name"
+							(selected)="selectEvent($event)"
+							(inputChanged)="onChangeSearch($event)"
+							(inputFocused)="onFocused($event)"
+							[itemTemplate]="itemTemplate"
+							[notFoundTemplate]="notFoundTemplate"
+							formControlName="ccs"
+						>
+						</ng-autocomplete>
+						<ng-template #itemTemplate let-item>
+							<a [innerHTML]="item.firstName"></a>
+						</ng-template>
+
+						<ng-template #notFoundTemplate let-notFound>
+							<div [innerHTML]="notFound"></div>
+						</ng-template>
+					</div>
+
+					<p class="add-ticket-input-label mar-top-15">Skills</p>
+					<input
+						class="add-ticket-detail-input"
+						type="text"
+						formControlName="skills"
+						placeHolder="Enter the Skills name"
+					/>
+					<p class="add-ticket-input-label mar-top-15">Groups</p>
+					<input
+						class="add-ticket-detail-input"
+						type="text"
+						formControlName="group"
+						placeHolder="Enter the group name"
+					/>
+				</div> -->
+			</div>
+			<div class="right-content-right-box">
+				<div class="right-box-header">
+					<div class="header-left-content">
+						<div class="header-content-box bor-none">
+							<p>{{ ticketid }}</p>
+						</div>
+						<div>
+							<button class="open-btn" type="button">Open</button>
+						</div>
+					</div>
+					<div class="header-right-content">
+						<button class="right-arrow-btn" type="button">
+							<img src="./assets/img/right-arrow.svg" alt="" />
+						</button>
+						<button
+							class="apps-button active"
+							(click)="toggleClass()"
+							type="button"
+						>
+							Apps
+						</button>
+					</div>
+				</div>
+				<div class="right-box-main-content">
+					<div class="main-content-chat-section" id="chatDiv">
+						<div class="profile-detail-container">
+							<div class="profile-image-wrapper">
+								<div class="profile-image-container">
+									<img src="./assets/img/issue-detail.svg" alt="" />
+								</div>
+							</div>
+							<div style="width: 90%; padding-left: 10px">
+								<p class="company-name">Issue details</p>
+								<input
+									class="add-ticket-detail-input"
+									type="text"
+									placeHolder="Enter the issue summary"
+									name="detail"
+									[(ngModel)]="detial"
+									required
+									[disabled]="isUpdate"
+								/>
+								<!-- <div style="display: flex;margin: 10px 0;">
+                                    <p class="company-info-text">15-03-2020</p>
+                                    <p class="company-info-text mar-l-r">.</p>
+                                    <p class="company-info-text">Lorem ipsum dolor sit ament</p>
+                                </div>
+                                <p class="company-info-text">Lorem ipsum dolor sit ament</p> -->
+							</div>
+						</div>
+
+						<div style="border-bottom: 0.5px solid rgba(112, 112, 112, 0.4)">
+							<div class="message-input-with-profile-pic">
+								<div class="profile-image-wrapper">
+									<div class="profile-image-container">
+										<img
+											class="profile-img"
+											src="./assets/img/profile-pic.png"
+											alt=""
+										/>
+									</div>
+								</div>
+								<div style="width: 90%; padding-left: 10px">
+									<div class="message-input-main-wrapper">
+										<div
+											style="
+												display: flex;
+												align-items: center;
+												justify-content: space-between;
+											"
+										>
+											<div style="width: 100%">
+												<div
+													style="
+														position: relative;
+														display: flex;
+														align-items: center;
+														border-bottom: 0.5px solid rgba(112, 112, 112, 0.4);
+														height: 30px;
+													"
+												>
+													<div class="nav nav-tabs message-box-tab-wrapper">
+														<p class="nav-link message-box-tab">Description</p>
+													</div>
+												</div>
+												<div class="tab-content" style="height: 120px">
+													<p
+														style="
+															font-size: 14px;
+															color: #000000;
+															font-weight: 400;
+															line-height: 1.5;
+															padding: 8px 15px;
+														"
+													>
+														<textarea
+															name="description"
+															class="add-ticket-detail-input"
+															style="height: auto; margin: 0"
+															cols="75"
+															rows="4"
+															placeHolder="Enter the issue description"
+															[(ngModel)]="desc"
+															required
+															[disabled]="isUpdate"
+														></textarea>
+													</p>
+													<!-- <p style="font-size: 14px;color:#000000; font-weight: 400;padding:15px; line-height: 1.5;">
+                                                    But i must explain to you how all this mistaken idea od denauncing pleasure Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus dignissimos sint fugit deleniti ut, facilis aliquid soluta amet adipisci iusto? Lorem ipsum dolor sit amet,
+                                                    consectetur adipisicing elit. Voluptatem dolore delectus error, minus asperiores ipsum.</p> -->
+												</div>
+											</div>
+										</div>
+									</div>
+									<div
+										class="mt-2"
+										style="
+											border-radius: 6px;
+											border: 1px solid #005459;
+											background-color: #f7f7f7;
+											color: #a19d9d;
+										"
+									>
+										<div
+											class="p-1 px-3"
+											style="border-bottom: 1px solid rgba(0, 0, 0, 0.212)"
+										>
+											<label
+												for=""
+												style="
+													font-size: 14px;
+													font-family: 'Roboto';
+													font-weight: 500;
+												"
+												>Activity :</label
+											>
+										</div>
+										<div class="p-3 py-2">
+											<input
+												type="text"
+												class="form-control"
+												name="latestupdate"
+												[(ngModel)]="latestupdate"
+												required
+												style="height: 2.5rem; font-size: 14px"
+												placeholder="Enter the Issue Activity"
+											/>
+										</div>
+										<!-- <hr style="margin: 0" /> -->
+									</div>
+								</div>
+							</div>
+
+							<div
+								class="my-1 mx-2"
+								style="
+									display: flex;
+									align-items: center;
+									justify-content: space-between;
+								"
+							>
+								<div class="btn btn-primary btn-sm">Send Mail</div>
+								<button
+									class="btn btn-primary"
+									type="submit"
+									[disabled]="!f.valid"
+								>
+									{{ isUpdate ? 'Update' : 'Submit' }}
+								</button>
+								<!-- <div class="btn btn-primary btn-sm">Send Mail</div> -->
+							</div>
+						</div>
+
+						<div style="margin-top: 10px; margin-left: 10px" class="my-2">
+							<div class="profile-image-wrapper"></div>
+
+							<div style="width: 100%; font-size: 14px">
+								<p>History Description</p>
+							</div>
+						</div>
+						<div
+							class="history-description-list"
+							style="
+								overflow: scroll;
+								width: 100%;
+								height: 30vh;
+								overflow-x: hidden;
+							"
+						>
+							<div
+								class="profile-detail-container bor-none"
+								*ngFor="let item of tickethistory"
+							>
+								<div class="profile-image-wrapper">
+									<div class="profile-image-container">
+										<img
+											class="profile-img"
+											src="./assets/img/profile-pic.png"
+											alt=""
+										/>
+									</div>
+								</div>
+								<div
+									style="
+										width: 90%;
+										padding-left: 10px;
+										display: flex;
+										flex-direction: column;
+										justify-content: center;
+									"
+								>
+									<p
+										class="agent-name-message-text text-capitalize"
+										style="font-size: 14px"
+									>
+										{{ item['UpdatedBY'] }}
+									</p>
+									<p
+										class="company-info-text mt-2 text-capitalize"
+										style="font-size: 10px"
+									>
+										{{ item['UpdatedDate'] | date: 'medium' }} ({{
+											item['RequestStatus']
+										}})
+									</p>
+
+									<div style="margin-top: 10px">
+										<p
+											class="agent-name-message-text text-capitalize"
+											style="font-size: 12px"
+										>
+											{{ item['LatestUpdate'] }}
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- <div class="">
+
+                        </div> -->
+						<!-- <div>hello</div> -->
+					</div>
+					<div
+						id="chatSideBar"
+						class="main-content-ticket-info-boxes background-change"
+					>
+						<div class="card m-1 p-2">
+							<label for="customername" class="my-1" style="font-size: 14px"
+								>Customer Name</label
+							>
+							<input
+								type="text"
+								class="form-control m-0"
+								style="height: 2rem"
+								id="customername"
+								[(ngModel)]="ReportedBy"
+								name="customername"
+							/>
+							<label for="usermailid" style="font-size: 14px" class="my-1"
+								>User Mail id</label
+							>
+							<input
+								type="text"
+								class="form-control m-0"
+								style="height: 2rem"
+								id="usermailid"
+								ngModel
+								name="usermailid"
+							/>
+							<label for="reportedby" style="font-size: 14px" class="my-1"
+								>User phone number</label
+							>
+							<input
+								type="text"
+								class="form-control m-0"
+								style="height: 2rem"
+								name="userphonenumber"
+								ngModel
+							/>
+							<label for="userlast" style="font-size: 14px" class="my-1"
+								>User Last Contacted</label
+							>
+							<input
+								type="text"
+								class="form-control"
+								style="height: 2rem; margin-top: 0px"
+								id="userlast"
+								name="userlastcontacted"
+								ngModel
+							/>
+							<label for="userlast" style="font-size: 14px" class="my-1"
+								>Prefered Contact</label
+							>
+							<select
+								name="preferedcontact"
+								id="userlast"
+								class="form-select p-1"
+								style="height: 2.2rem; font-size: 14px"
+								ngmodel
+							>
+								<option value="value">Phone</option>
+								<option value="value">Mail</option>
+								<option value="value">Chat</option>
+							</select>
+						</div>
+						<hr />
+						<div class="ticket-status-list-box">
+							<div class="status-box-header">
+								<div>
+									<p>Five most recents</p>
+								</div>
+								<div>
+									<button class="right-arrow-btn" type="button">
+										<img
+											class="rotate-img"
+											src="./assets/img/right-arrow.svg"
+											alt=""
+										/>
+									</button>
+								</div>
+							</div>
+
+							<div class="status-list-item">
+								<div style="width: 55%">
+									<p class="ticket-name-text">
+										#45 Lorem ipsum dolor sit amet.
+									</p>
+								</div>
+								<div
+									style="width: 40%; display: flex; justify-content: flex-end"
+								>
+									<p class="ticket-name-text diff-color">Status: Open</p>
+								</div>
+							</div>
+							<div class="status-list-item">
+								<div style="width: 55%">
+									<p class="ticket-name-text">
+										#45 Lorem ipsum dolor sit amet.
+									</p>
+								</div>
+								<div
+									style="width: 40%; display: flex; justify-content: flex-end"
+								>
+									<p class="ticket-name-text diff-color">Status: Open</p>
+								</div>
+							</div>
+							<div class="status-list-item">
+								<div style="width: 55%">
+									<p class="ticket-name-text">
+										#45 Lorem ipsum dolor sit amet.
+									</p>
+								</div>
+								<div
+									style="width: 40%; display: flex; justify-content: flex-end"
+								>
+									<p class="ticket-name-text diff-color">Status: Open</p>
+								</div>
+							</div>
+							<div class="status-list-item">
+								<div style="width: 55%">
+									<p class="ticket-name-text">
+										#45 Lorem ipsum dolor sit amet.
+									</p>
+								</div>
+								<div
+									style="width: 40%; display: flex; justify-content: flex-end"
+								>
+									<p class="ticket-name-text diff-color">Status: Open</p>
+								</div>
+							</div>
+							<div class="status-list-item">
+								<div style="width: 55%">
+									<p class="ticket-name-text">
+										#45 Lorem ipsum dolor sit amet.
+									</p>
+								</div>
+								<div
+									style="width: 40%; display: flex; justify-content: flex-end"
+								>
+									<p class="ticket-name-text diff-color">Status: Open</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>

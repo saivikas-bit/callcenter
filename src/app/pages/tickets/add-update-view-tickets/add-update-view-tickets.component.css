@@ -1,0 +1,117 @@
+.toggleChat {
+	width: 100%;
+}
+
+.toggleSideBar {
+	display: none;
+}
+select:focus {
+	border: 0;
+	outline: 0;
+}
+.form-label {
+	margin-top: 12px;
+	font-size: 14px;
+}
+.form-control {
+	height: 2rem;
+}
+.form-control:focus {
+	box-shadow: none;
+	border: rgba(0, 0, 0, 0.466) 1px solid;
+	/* height: 1rem; */
+}
+.form-select:focus {
+	box-shadow: none;
+	border: 1px solid rgba(0, 0, 0, 0.356);
+}
+ng-multiselect-dropdown {
+	font-size: 14px;
+}
+.dropdown-multiselect__caret {
+	width: 25px;
+	height: 25px;
+}
+.btn {
+	border: 0px solid black;
+	padding: 2px 8px;
+}
+.input-group {
+	border: 1px solid rgba(0, 0, 0, 0.281);
+	border-radius: 6px;
+	/* position: relative; */
+}
+ng-multiselect-dropdown
+	.multiselect-item-checkbox
+	input[type='checkbox']
+	+ div:before {
+	display: none !important;
+	border: 0px solid #adadad !important;
+	animation: none !important;
+	text-transform: capitalize;
+}
+ng-multiselect-dropdown
+	.multiselect-item-checkbox
+	input[type='checkbox']
+	+ div:after {
+	display: none !important;
+	border: 0px solid #adadad !important;
+	animation: none !important;
+}
+ng-multiselect-dropdown .multiselect-dropdown .dropdown-btn .selected-item {
+	background-color: white !important;
+	color: black !important;
+	border: 0px !important;
+	text-transform: capitalize !important;
+}
+ng-multiselect-dropdown
+	.multiselect-dropdown
+	.dropdown-btn
+	.selected-item:hover {
+	box-shadow: none !important;
+	text-transform: capitalize !important;
+}
+.btn-primary {
+	background-color: #005459;
+	font-size: 14px;
+	padding: 4px 8px;
+	font-weight: normal;
+}
+.btn-primary:hover {
+	background-color: #005459;
+	font-size: 14px;
+	padding: 4px 8px;
+	font-weight: normal;
+}
+button .btn-primary:hover {
+	background-color: #005459;
+	font-size: 14px;
+	padding: 4px 8px;
+	font-weight: normal;
+}
+.message-input-main-wrapper {
+	height: 134px;
+}
+ng-multiselect-dropdown .dropdown-list {
+	text-transform: capitalize !important;
+}
+.btn-primary:disabled {
+	background-color: #005459;
+	border: #005459;
+	cursor: not-allowed;
+}
+.btn-primary:active {
+	background-color: #005459;
+	border: #005459;
+	box-shadow: none;
+}
+.btn-primary:focus {
+	background-color: #005459;
+	border: #005459;
+	box-shadow: none !important;
+}
+.company-name {
+	font-size: 14px;
+	font-weight: normal;
+	font-family: 'Roboto';
+}

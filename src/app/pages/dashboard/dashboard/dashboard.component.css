@@ -1,0 +1,47 @@
+table {
+	border-collapse: collapse;
+	border-radius: 6px;
+	border-style: hidden; /* hide standard table (collapsed) border */
+	/* box-shadow: 0 0 0 1px #666; this draws the table border  */
+	/* padding: 6px; */
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+	font-size: 12px;
+	margin: 0px 30px;
+}
+table thead tr {
+	/* background-color: #005459; */
+	color: black;
+	height: 2.3rem;
+	position: relative;
+	overflow: hidden;
+	border: 1px solid rgba(0, 0, 0, 0.438);
+	text-transform: capitalize;
+	font-size: 14px;
+}
+table thead tr th {
+	/* padding-left: 12px; */
+	font-weight: normal;
+	text-transform: capitalize;
+}
+table tbody tr td {
+	/* padding-left: 12px; */
+	padding: 12px 0px;
+	font-size: 12px;
+}
+table tbody tr {
+	border-bottom: 1px solid rgba(0, 0, 0, 0.185);
+}
+
+.requsted-list-heading-container {
+	padding: 0;
+	border: 0px;
+}
+.add-ticket-detail-input::placeholder {
+	font-size: 14px;
+}
+.profile-detail-container {
+	padding: 8px 8px !important;
+}
+/* ..requsted-list-heading-container */
